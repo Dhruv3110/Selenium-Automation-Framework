@@ -1,0 +1,9 @@
+<!-- Your testing.xml file is a TestNG configuration file 
+that defines how your test suite should be executed.-->
+<suite name="TestSuite">
+	<test name="LoginTest">
+		<classes>
+			<class name="tests.LoginTest"></class>
+		</classes>
+	</test>
+</suite>

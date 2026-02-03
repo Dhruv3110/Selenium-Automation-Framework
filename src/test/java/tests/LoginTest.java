@@ -23,54 +23,54 @@ public class LoginTest extends BaseTest {
 	// Approach 1: Data Driven Testing Using Excel File
 	// (Excel DataProvider + Test Case Together)
 	// ======================================================
-	/*
-	@DataProvider(name = "LoginData")
-	public Object[][] getLoginData() throws IOException {
+	
+	// @DataProvider(name = "LoginData")
+	// public Object[][] getLoginData() throws IOException {
 
-		String filePath = System.getProperty("user.dir") + "/testData/TestData.xlsx";
+	// 	String filePath = System.getProperty("user.dir") + "/testData/TestData.xlsx";
 
-		ExcelUtils.loadExcel(filePath, "Sheet1");
+	// 	ExcelUtils.loadExcel(filePath, "Sheet1");
 
-		int rowCount = ExcelUtils.getRowCount();
-		Object[][] data = new Object[rowCount - 1][2];
+	// 	int rowCount = ExcelUtils.getRowCount();
+	// 	Object[][] data = new Object[rowCount - 1][2];
 
-		for (int i = 1; i < rowCount; i++) {
-			data[i - 1][0] = ExcelUtils.getCellData(i, 0); // username
-			data[i - 1][1] = ExcelUtils.getCellData(i, 1); // password
-		}
+	// 	for (int i = 1; i < rowCount; i++) {
+	// 		data[i - 1][0] = ExcelUtils.getCellData(i, 0); // username
+	// 		data[i - 1][1] = ExcelUtils.getCellData(i, 1); // password
+	// 	}
 
-		ExcelUtils.closeExcel();
-		return data;
-	}
+	// 	ExcelUtils.closeExcel();
+	// 	return data;
+	// }
 
-	@Test(dataProvider = "LoginData")
-	public void testValidLogin_ExcelData(String username, String password) {
+	// @Test(dataProvider = "LoginData")
+	// public void testValidLogin_ExcelData(String username, String password) {
 
-		Log.info("Starting login test...");
-		test = ExtentReportManager.createTest("Login Test - " + username);
+	// 	Log.info("Starting login test...");
+	// 	test = ExtentReportManager.createTest("Login Test - " + username);
 
-		test.info("Navigating to URL..");
-		LoginPage loginPage = new LoginPage(driver);
+	// 	test.info("Navigating to URL..");
+	// 	LoginPage loginPage = new LoginPage(driver);
 
-		Log.info("Adding credentials...");
-		test.info("Adding credentials..");
+	// 	Log.info("Adding credentials...");
+	// 	test.info("Adding credentials..");
 
-		loginPage.enterUserName(username);
-		loginPage.enterPassword(password);
+	// 	loginPage.enterUserName(username);
+	// 	loginPage.enterPassword(password);
 
-		test.info("Clicking on Login Button");
-		loginPage.clickLogin();
+	// 	test.info("Clicking on Login Button");
+	// 	loginPage.clickLogin();
 
-		System.out.println("Title of the Page: " + driver.getTitle());
+	// 	System.out.println("Title of the Page: " + driver.getTitle());
 
-		Log.info("Verifying Page title...");
-		test.info("Verifying Page Title...");
+	// 	Log.info("Verifying Page title...");
+	// 	test.info("Verifying Page Title...");
 
-		Assert.assertEquals(driver.getTitle(), "Just a moment...");
+	// 	Assert.assertEquals(driver.getTitle(), "Just a moment...");
 
-		test.pass("Login Successful.");
-	}
-	*/
+	// 	test.pass("Login Successful.");
+	// }
+	
 
 	// ======================================================
 	// Approach 2: Data Driven Testing Using Hardcoded Inline Data
@@ -175,7 +175,7 @@ public class LoginTest extends BaseTest {
 		Log.info("Verifying Page title...");
 		test.info("Verifying Page Title...");
 
-		Assert.assertEquals(driver.getTitle(), "Just a moment...");
+		Assert.assertEquals(driver.getTitle(), "Just a moment...ABCD");
 
 		test.pass("Login Successful.");
 	}

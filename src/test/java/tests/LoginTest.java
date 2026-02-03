@@ -119,39 +119,39 @@ public class LoginTest extends BaseTest {
 	// ======================================================
 	// Approach 3: Parameterization Using TestNG XML (@Parameters)
 	// ======================================================
-	@Test
-	@Parameters({ "username", "password" })
-	public void testValidLogin_XMLParameters(String username, String password) {
+	// @Test
+	// @Parameters({ "username", "password" })
+	// public void testValidLogin_XMLParameters(String username, String password) {
 
-		Log.info("Starting login test...");
-		test = ExtentReportManager.createTest("Login Test - " + username);
+	// 	Log.info("Starting login test...");
+	// 	test = ExtentReportManager.createTest("Login Test - " + username);
 
-		test.info("Navigating to URL..");
-		LoginPage loginPage = new LoginPage(driver);
+	// 	test.info("Navigating to URL..");
+	// 	LoginPage loginPage = new LoginPage(driver);
 
-		Log.info("Adding credentials...");
-		test.info("Adding credentials..");
+	// 	Log.info("Adding credentials...");
+	// 	test.info("Adding credentials..");
 
-		loginPage.enterUserName(username);
-		loginPage.enterPassword(password);
+	// 	loginPage.enterUserName(username);
+	// 	loginPage.enterPassword(password);
 
-		test.info("Clicking on Login Button");
-		loginPage.clickLogin();
+	// 	test.info("Clicking on Login Button");
+	// 	loginPage.clickLogin();
 
-		System.out.println("Title of the Page: " + driver.getTitle());
+	// 	System.out.println("Title of the Page: " + driver.getTitle());
 
-		Log.info("Verifying Page title...");
-		test.info("Verifying Page Title...");
+	// 	Log.info("Verifying Page title...");
+	// 	test.info("Verifying Page Title...");
 
-		Assert.assertEquals(driver.getTitle(), "Just a moment...");
+	// 	Assert.assertEquals(driver.getTitle(), "Just a moment...");
 
-		test.pass("Login Successful.");
-	}
+	// 	test.pass("Login Successful.");
+	// }
 
 	// ======================================================
 	// Approach 4: Simple Login Test Without DataProvider (Static Data)
 	// ======================================================
-	/*
+	
 	@Test
 	public void testValidLogin_StaticData() {
 
@@ -179,7 +179,7 @@ public class LoginTest extends BaseTest {
 
 		test.pass("Login Successful.");
 	}
-	*/
+	
 
 	// ======================================================
 	// Approach 5: Negative Testing with Invalid Credentials
